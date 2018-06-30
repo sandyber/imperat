@@ -1,0 +1,153 @@
+%change for the sake of git
+
+%\let\phi=\varphi
+% \let\paragraph=\section
+%60491806
+\def\H{\ensuremath{H}}
+\def\Sp{\ensuremath{S}}
+%---------------------------------
+\thispagestyle{empty}
+%\tableofcontents{}
+\noindent{}%
+
+\paragraph{}
+
+%I wish now to address the implications of the claims I have defended for the pragmatics of imperatives. Recent years have seen, in relative terms at least, an explosion of interest in this issue. One of the most influential accounts is based on the notion of a To-Do list. The utterance of an imperative sentence, according to this idea, aims at changing the addressee's To-Do list.\footnote{See the overviews in \cite{Por16,Han11} and the earlier work in \cite{Por04,Por07}.} I will argue that, for all its elegance, this account is seriously flawed.
+
+Under Stalnaker's dynamic analysis of conversation, each participant comes equipped with a set of presuppositions, that is, propositions that he accepts for the purpose of the conversation. The \emph{common ground} of the conversation comprises all and only propositions every participant accepts. The speaker, in asserting a declarative sentence, proposes to \emph{update} the common ground. In general, any salient fact may prompt an update: for example, the very fact of an English utterance updates the common ground, so that the proposition `$X$ speaks English' is added to it. If, however, the proposition expressed by the utterance is accepted, then this proposition itself is added to the common ground. The pragmatic force of the assertion, what the speaker is trying to achieve by making that assertion, can be interpreted as just such an update.\footnote{For a recent outline, see \citet[24--25, 46--53]{Sta14}.}
+
+For each participant, his presuppositions are either true or false, and it is their truth or falsehood that is being accepted for the purpose of conversation. Assertion, of the kind occupying Stalnaker, is also true or false. So we could say that the kind of conversation that Stalnaker is concerned with is a conversation about the state of the world in which various claims about the world are advanced, accepted, and rejected.
+
+If framed this way, this approach immediately appears somewhat limited. Not every conversation people conduct is about the state of the world, and even if it were, not every background assumption people make prior to the conversation is about the state of the world. Shouldn't these unnamed assumptions have any effect on the conversation? Plenty of conversations contain directive speech acts in which the speakers command, request, and instruct:
+\begin{eqclaim}\label{eq:1}
+  Wipe the floor!\\
+  Please bring that book.\\
+  Take this pill twice a day.
+\end{eqclaim}
+On many views, these utterances do not express truth-conditional content, and so fall by the wayside. And this is regrettable: we know that directives govern conversations where regularities are observed---namely, speakers direct and hearers comply, or refuse to do so. Accounting for such regularities in the dynamic evolution of conversations was precisely the target of Stalnaker's analysis.
+
+Looking at the matter from the opposite perspective, regret grows. Directives were examined by the speech act theory, but the pragmatic mechanism was left obscure. They were said to `invoke the authority' of the speaker, to represent an attempt to get the hearer to act, or to give the hearer a `sufficient reason' for performance. Little else was added by way of clarification, mostly because any such clarification was thought to fall outside the purview of the philosophy of language. Hence the following problem emerges:
+\begin{description}
+\item[Representation problem] What is the pragmatic mechanism through which the speaker directs (commands, requests, instructs) the hearer to perform a particular action?
+\end{description}
+
+\paragraph{}
+The lacunae I have described can be filled. On one hand, we could reject the assumption that the utterances in~\eqref{eq:1} have no truth value. If they are assertible just like declarative utterances are, then they can be added to the common ground and no special treatment is in order. Let us though not choose the easiest way. Let us maintain with the majority that the utterances in~\eqref{eq:1} have no truth value. Whatever they express cannot thus be added to the common ground. But even so, a solution is just around the corner.\footnote{Developed in \cite{Por04,Por07} and also in \cite{Han11}. See \cite{Por16} for a review.}
+
+% \footnote{For the purposes of this brief exposition I ignore Portner's semantic doctrine that imperatives denote properties uniquely satisfiable by the addressee, and that, accordingly, To-Do Lists are lists of properties represented in lambda-calculus which can be made true or false.}
+
+We could say that each participant of the conversation comes equipped not only with a body of presuppositions out of which the common ground is extracted, but also with `To-Do Lists'. These lists specify the actions to be performed by the owner. This is entirely reasonable: we engage people in conversation for the most part to achieve certain practical goals, to do something, most likely with their direct or indirect help. So we approach most, if not all, conversations with some idea of what needs to be done, what we have to do. Only an idealised agent in an idealised situation would engage in a conversation solely for the purpose of learning how things are, or should be, without doing something about that. So in uttering an imperative sentence the speaker seeks to update the To-Do list of the addressee. Now one immediate issue to resolve is the nature of the items on the list. Here it is worth remembering how things stood with declaratives. When a speaker made a declarative utterance, a \emph{proposition} was added to the common ground. The legitimacy of this move assumes a semantic analysis of declaratives in terms of propositions. But since we have agreed that imperatives cannot be propositions, and in so far as we wish to maintain the analogy with declaratives (or in other words, to give a unified account of imperatives and declaratives), separate semantic rules $R(S)=I$ have to be provided that take an imperative $S$ and yield its semantic value $I$ to be placed as an item on the hearer's TDL.
+
+As long as they do not yield propositions, it is immaterial for my present purposes how these semantic rules are fixed. For specificity, however, I adopt Portner's proposal that semantic values of imperatives are properties to be uniquely satisfied by the addressee. So, e.g., the semantic value of `Leave!' addressed to $a$ would be a property construct `$a$ leaves'. More precisely:\footnote{Following the conventions in \cite{HeiKra98}.}
+\begin{equation}
+  \label{eq:2}
+\val{!\phi}^c = [\lambda w \lambda x : \text{$x$ is the addressee} \mathrel{.} \text{$x$ is $\phi$-ing in $w$}].
+\end{equation}
+Properties thus defined can be satisfied at a world $\mathbf{w}$ by an individual $\mathbf{i}$, in which case we write $P(\mathbf{w,i})=1$.
+
+The utterance of the imperative targets the addition of its semantic value to the TDL of the addressee. Letting $L(x)$ be the TDL of the addressee $x$ prior to the utterance of the imperative $!\phi$ in the context $c$, the update function takes this simple form:
+\begin{equation}
+  \label{eq:3}
+  \upd{L(x)} = L(x) \cup \left\{\val{!\phi}^c\right\}.
+\end{equation}
+This account, to which I will now refer as the `theory \Th', claims for itself the virtue of solving the Representation Problem. Rather than vaguely saying that imperatives `invoke' the authority the speaker has vis-\`a-vis the hearer, it identifies a concrete pragmatic mechanism of To-Do Lists. It describes the conditions of rationality for the hearer in the situation where a directive is received. We define a partial ordering of worlds as follows:
+\begin{equation}\label{eq:4}
+   \forall w \forall u (w \leqslant_i u) \text{ iff: } \Set{P \given P \in L(i) \And P(w,i)=1} \subseteq \Set{P \given P \in L(i) \And P(u,i)=1},
+\end{equation}
+where $i$ is the addressee of the imperative, and the worlds $w,u$ are in the context set. Once he indicates the acceptance of the directive, the addressee would wish to actualise the worlds with the highest rank.\footnote{See \citet[243--3]{Por04}.} That is, he would try to make true as many properties on his TDL as possible. 
+%The hearer will wish to conflicting commands are issued.
+
+\paragraph{}
+Having laid out the elements of \Th, I wish now to argue that the Representation Problem has not been solved. As far as it claims to offer a pragmatic analysis of imperative utterances, the theory \Th\ just sketched ends in failure. I will conduct my discussion under a number of rubrics.
+
+\subparagraph{Motivation and compliance.}
+Commands are species of imperative utterances. Now, what is the illocutionary point of a command? What is the point the speaker makes, what is he trying to achieve? As $\Th$ has it, the point is to insert the semantic value of the command on the TDL of the hearer, with the understanding that the rational speaker would then at least attempt to perform the relevant action. This is arguably against the facts. At least for some orders and commands, the intention is to bring about the result, to ensure the actual performance of the hearer.
+
+Suppose an officer orders a soldier to charge the enemy. Had the soldier enquired for the reason---why, after all, should he sacrifice his life?---the officer could have provided substantial reasons for the soldier's action. Providing such reasons is compatible with the officer giving a genuine command before (and with ensuring that the soldier obeys the command). Suppose further that the officer issued a command `Fire!', that the soldier fired his weapon, but cited as a reason his fear of punishment for disobedience. Or suppose he fired the weapon absent-mindedly, on autopilot, not thinking anything specific at all. Would in that case the officer's intention remain unfulfilled? Would the command fail? It seems not. The soldier obeyed the command, and it did not matter one bit to the officer what the soldier's reasons were in performing the action.\footnote{Here I disagree with many accounts of commands and directive speech acts generally. See, e.g., \citet[105]{Kis13}.}
+
+The confusion is between reasons and causes. Reasons for performing the commanded action are irrelevant, as far as the speaker (the commander) is concerned. What is relevant is rather the causal chain leading from the utterance to the action. Commands express the utterer's intention that the utterance should be taken as a sufficient \emph{cause} for performing the action. No deviation from the course of action indicated by the command, so the intention goes, would be tolerated. It is again important to note that the utterance is merely a sufficient cause. The action may in fact be caused by any number of other factors, such as the hearer's own free decision. This does not make the intention unfulfilled.
+
+The utterer, therefore, does not care what the motivation of the obedient hearer is. The point of such utterances is the performance of the action, not a change in motivation. In the terminology of $\Th$, the point is to saturate the property $\val{!\phi}^c$ in whatever way. The addressee may indicate no acceptance of the imperative, and hence may give us (or the utterer) no reason to think that the TDL was updated in accordance with \eqref{eq:3}. Yet the subsequent performance of the action can still count as compliance with the command. This last fact is not reflected in $\Th$.
+
+  % There are two different questions to address: (1) what is the causal mechanism leading from the utterance of an imperative to the performance? And (2) what is the intention of the speaker? (3) How does the interaction between the speaker and the hearer develop in time?
+
+  % It is clear that the theory $\Th$ aims at answering (3).
+  
+\subparagraph{Infinite regress.}
+In its pragmatic analysis, the theory \Th\ makes no distinction between different kinds of speech acts, such as commands, orders, requests, or instructions. The TDL-based explanation is supposed to replace all the vague talk about the different kinds of directive force which was a staple notion in the earlier speech-act analysis. But this masks a shortcoming. For suppose we grant that the speaker $S$ intends to update the hearer $H$'s TDL $L(H)$. Yet when $S$ commands, he should then \emph{command} $H$ to adjust $L(H)$. If $S$ makes a request for $H$, then he should \emph{request} $H$ to adjust $L(H)$. The original directive of the form `Do $A$!' induces another directive of the form `Place ``doing A'' on your To-Do list!' Correspondingly, these further directives should receive the same treatment as the original one. Hence we end up with an infinite sequence of directives to perform $\phi$-ing, TDLs, directives to update TDLs, meta-TDLs, directives to update meta-TDLs, and so forth. A regress is under way which apparently cannot be terminated.
+
+It is no use to retort that the task of \Th\ is merely to chart the causal path from utterances to action. Not only is there any number of such paths (as I have claimed earlier), and not only does \Th\ have normative pretensions, but also, crucially, the TDL update is not a physical or psychological event to be recorded and to be part of a causal chain. It is rather a theoretical device for understanding what happens in a linguistic interaction.
+
+Both complaints just sketched target \Th's interpretation of the speaker's intention. The joint response here may be that the goal of \Th\ does not include modelling the speaker's intention at all. It is rather to model the hearer's rationality (but not the actual compliance). To model compliance we have no need of TDLs. But we can only interpret rationality through TDLs. Pragmatics asks the question: what is taking place in the interaction between the speaker and the hearer? We concede that the speaker's intention remains uninterpreted in our model, but insist that the rationality of the hearer has been taken care of (see Table~\ref{tab:1}).
+%  \begin{center}
+    \begin{table}[!h]
+\centering
+      \begin{tabular}{@{}ll  p{75mm}@{}}
+ \toprule     
+ Notions && Interpretations\\ %[0.5ex] 
+ \midrule
+ Speaker's intention && ? \\ 
+ Hearer's acceptance of $U$ && Updating TDL \\
+ Hearer's rejection of $U$ && TDL not updated \\
+ Hearer's rationality of behaviour && Maximising the number of saturated properties on the TDL \\
+ \bottomrule
+ \end{tabular}
+      \caption{Achievements of the theory \Th}
+      \label{tab:1}
+    \end{table}
+I will now argue that \Th\ fails also in that more limited endeavour.
+
+\subparagraph{The disappearance of directive force.}
+Suppose you receive a request to write a letter. You accept the request, and this, according to \Th, amounts to changing your preferences. Whereas before your preference for spending tonight was to watch a film, now your preference for tonight becomes writing a letter. So this shift can be represented as an update of your TDL. Suppose now you receive a \emph{command} to write a letter. If you accept, the change in your condition is described in exactly the same way. But this is to miss something important. A hearer may refuse to accept the command---i.e.\ to update TDL---precisely because it is a command (`I refuse to even consider this---you have no right to boss me around!'). On other occasions, the hearer would do the opposite: `If he simply asked me, I would have refused; but since he commanded, I feel compelled~\dots' The complaint I am lodging is that, for the hearer's rationality to be interpreted, we have to take into account the directive force of the utterance. Whether the TDL is updated depends on the kind of directive force of the speaker's utterance. 
+
+The same problem emerges when we turn to the actual performance. The hearer's rationality is constrained by maximising the number of saturated properties on the TDL (the partial ordering in~\eqref{eq:4}). But shouldn't a provision be made for the source of those properties? One reason a hearer can give for saturating the property $\val{!\phi}$ as opposed to $\val{!\psi}$ is that he was commanded to $\phi$, but only requested to $\psi$. %$P \preccurlyeq Q$
+
+Now it is tempting to think that both of these difficulties can be dealt with if we introduced a partial ordering of the elements of TDL. Such an ordering would reflect the relative importance of the elements. But how to cash out this relative importance? Clearly it should reflect their priority in the actual performance. We imagine, simplifying greatly, that the hearer has only to perform one task at a time. Then, other things equal, he will perform the one ranked higher on the list. Thus we could say:
+\begin{multline}
+  \label{eq:5}
+  \forall P \forall Q ( P \preccurlyeq Q) \text{ iff: } \forall w \forall u (((\forall R (R \neq P \And R \neq Q \implies R(w) = R(u)) \And\\ P(w) = Q(u) = 1 \And P(u) = Q(w) = 0) \implies w \leqslant u).
+%(\Set{R \given R(w)=1} = \Set{R \given R(u)=1}  
+\end{multline}
+A property $Q$ has a higher directive rank than $P$ just in case of the two worlds otherwise identical, the one where $Q$ is saturated is more rational to actualise than the one where $P$ is saturated. But within the framework of \Th, this move gets things exactly backwards. We defined the ordering on worlds via the properties of TDL. Now, however, we define the properties of TDL via the ordering of worlds.
+
+Similarly, instead of a simple formula~\eqref{eq:3}, we have to have an update function that inserts new properties into the TDL in accordance with their rank. Conceivably, directive force is a factor determining the rank. But it is also clear that the rank, according to which actions are subsequently performed, is not functionally determined by directive force: e.g., some requests may take priority over some commands. How this determination is worked out, if it can be worked out, no pragmatic theory can say. We are in the terrain of a decision theory where additional variables should be supplied with the help of notions foreign to the pragmatic theory. In the absence of any such further much more complicated formula, the update function in~\eqref{eq:3} remains an idle fiction. Secondly, the hearer must demonstrate rationality already at this stage of interaction. We should be able to say already when he acquiesces to the command that the property is inserted with a certain rank. This goes against the ambition of \Th, where rationality is identified simply with an actualisation of whatever items there are on the list. We are in need of a much more fine-grained description of rationality.
+
+The problem of course is not resolved by proliferating To-Do Lists. Instead of having one list with sorted properties, one could posit several lists with just one kind of properties. The hearer will be equipped with separate lists for commands, requests, and so forth, corresponding to the directive force of the imperative. Once again there is no one actualisation demand that would correspond to the hearer's rationality. The hearer will have to actualise worlds in particular order depending on the directive force and other factors. 
+
+% \begin{equation}\label{eq:6}
+%   \forall w \forall u (w \leqslant_i u) \text{ iff: } \forall p \forall q (p \preccurlyeq q \implies ((p(w)=1 \implies p(u)=1) \And (q(u)=1 \implies q(w)=1))).
+% \end{equation}
+
+%Commands\mn{New} and requests (and incidentally other directives) update TDLs in different ways corresponding to their different pragmatic force. The model fails to reflect this fact.
+%
+%
+% \subparagraph{From TDLs to actions.}
+
+% No\mn{New} account given on how TDLs move the speaker to act. Unless this is explained, isn't the problem simply postponed?
+% % \end{enumerate*}
+
+\paragraph{}
+None of the difficulties I have raised apply to the dynamic account of declaratives (i.e.\ to the account of assertion). The reason is simple. Assertions are not directives. In making an assertion the speaker does not command, request, or ask the hearer to do anything in particular. This is clear from the difference between:
+\begin{eqclaim}\label{eq:7}
+  Snow is white
+\end{eqclaim}
+and:
+\begin{eqclaim}\label{eq:8}
+  I am asking/ordering/begging you to believe that snow is white.
+\end{eqclaim}
+What the speaker does with \eqref{eq:7} is to assert the truth of a statement. What he does with \eqref{eq:8} is to influence, in some way, the beliefs of the interlocutor. A proper reaction to the former would be:
+\begin{eqclaim}
+  Yes, it is/No, it is not,
+\end{eqclaim}
+whilst the proper reaction to the latter would be:
+\begin{eqclaim}
+  All right, I will/No, I will not.
+\end{eqclaim}
+There are two different conversations here. In one of them people discuss properties of snow. In the other the subject is the beliefs of the addressee. To assimilate the conversation about snow to the conversation about beliefs is to say that people never say anything about the world, that the only legitimate subject of conversation is the epistemic state of the interlocutor. In any event, as I see it, Stalnaker's analysis proceeds on the assumption of rejection of that assimilation and applies to the first kind of conversation.
+
+\endinput
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "imper-main"
+%%% End:
